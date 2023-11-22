@@ -1,0 +1,157 @@
+.btn {
+  height: 50px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  border none
+  transition: var(--transition);
+  border-radius: 100px;
+
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  &__mini {
+    padding: 10px 30px;
+    height: 45px !important
+    gap 15px
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &--gray {
+    background-color: var(--gray);
+    backdrop-filter: blur(5px);
+    color: var(--dark);
+    height 60px
+    border: none;
+  }
+
+  &--gray-border {
+    color: var(--dark);
+    border: 1px solid var(--gray_dark);
+  }
+
+  &--blur {
+    background-color: var(--white-o5);
+    color: var(--dark);
+    border: none;
+    font-size 14px
+    padding: 5px 10px;
+    height: 30px;
+  }
+
+  &--white {
+    background-color: var(--white);
+    color: var(--dark_light);
+    border: none;
+
+    figure {
+      path {
+        fill: var(--dark_light);
+      }
+    }
+
+    &:hover {
+      background var(--main)
+      color var(--white)
+
+      svg path {
+        fill var(--white)
+      }
+    }
+
+    &--active {
+      background var(--main)
+
+      svg path {
+        fill var(--white)
+      }
+      color var(--white)
+    }
+  }
+
+  &--pink {
+    border: 1px solid var(--main);
+    background: var(--main);
+    border-radius: 100px;
+    padding: 16px 30px;
+    height: 60px;
+    color: var(--white);
+
+    .icon svg {
+      path {
+        fill: var(--white);
+      }
+    }
+  }
+
+  &--pink-border {
+    border: 1px solid var(--main);
+    color: var(--main);
+  }
+
+  &--pink_text {
+    height: 60px;
+    padding: 17px 20px;
+    background: var(--white);
+    color: var(--main);
+    border: 1px solid var(--white);
+    border-radius: 5px;
+
+    .icon svg {
+      path {
+        fill: var(--main);
+      }
+    }
+  }
+
+  &--circle {
+    padding 15px
+    background var(--gray_dark)
+    border-radius 100px
+
+    height 60px
+    width 60px
+
+    &:hover {
+      background var(--main)
+    }
+
+    &_white {
+      background var(--white)
+
+      svg path {
+        fill var(--dark)
+      }
+
+      &:hover {
+        background var(--main)
+        color var(--white)
+
+        svg path {
+          fill var(--white)
+        }
+      }
+
+      &--active {
+        background var(--main)
+
+        svg path {
+          fill var(--white)
+        }
+        color var(--white)
+      }
+    }
+  }
+}

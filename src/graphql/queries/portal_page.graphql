@@ -1,0 +1,51 @@
+query ($first: Int, $page: Int, $category_id: Int, $title: String) {
+  news_paginate (first: $first page: $page, category_id: $category_id, title: $title, ordering: [{orderColumn: "date", orderBy: "DESC"}]){
+    paginatorInfo{
+      total
+    }
+    data{
+      id
+      title
+      subtitle
+      date
+      description
+      category {
+        id
+        title
+      }
+      conclusion
+      actual
+      created_at
+    }
+  }
+  categories{
+    title
+    id
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

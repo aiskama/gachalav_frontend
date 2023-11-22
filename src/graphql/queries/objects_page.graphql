@@ -1,0 +1,84 @@
+query{
+  object_homes(ordering: [{orderColumn: "date", orderBy: "DESC"}]){
+    id
+    title
+    price
+    payback
+    left
+    address
+    date
+    images{
+      id
+      title
+      img{
+        id
+        path
+        alt
+        origin_name
+      }
+    }
+    img{
+      id
+      path
+      alt
+      origin_name
+      type
+      size
+    }
+  }
+  secondaryobject{
+    id
+    title
+    subtitle
+    left
+    description
+    images{
+      id
+      title
+      img{
+        id
+        path
+        alt
+        origin_name
+      }
+    }
+    img{
+      id
+      alt
+      path
+    }
+    images{
+      img{
+        id
+        alt
+        path
+      }
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

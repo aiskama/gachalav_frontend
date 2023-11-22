@@ -1,0 +1,28 @@
+query {
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

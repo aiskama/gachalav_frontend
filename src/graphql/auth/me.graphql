@@ -1,0 +1,21 @@
+query {
+  me {
+    id
+    name
+    surname
+    patronymic
+    phone
+    email
+    active_sub {
+      id
+      start_date
+      end_date
+      tariff {
+        id
+        price
+        month_count
+        title
+      }
+    }
+  }
+}

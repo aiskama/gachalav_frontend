@@ -1,0 +1,51 @@
+query{
+  object_homes(ordering: [{orderColumn: "date", orderBy: "DESC"}]){
+    id
+    title
+    indicator{
+      id
+      title
+      amount
+      unit
+    }
+    camera{
+      id
+      title
+      link
+    }
+    img{
+      id
+      path
+      origin_name
+      alt
+      type
+      size
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

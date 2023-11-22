@@ -1,0 +1,147 @@
+query($id: Int){
+  object_homes_item(id: $id){
+    id
+    title
+    subtitle
+    description
+    about_project
+    address
+    price
+    payback
+    left
+    camera{
+      id
+      title
+      link
+    }
+    construction_slider{
+      id
+      start_date
+      img{
+        id
+        path
+        origin_name
+        alt
+      }
+    }
+    operating_permit {
+      id
+      title
+      file {
+        id
+        path
+        origin_name
+        alt
+        size
+        type
+      }
+    }
+    img {
+      id
+      path
+      origin_name
+    }
+    images{
+      id
+      img{
+        id
+        path
+        alt
+        origin_name
+      }
+      title
+      subtitle
+    }
+    object_life{
+      id
+      title
+      img{
+        id
+        path
+        alt
+        origin_name
+      }
+    }
+    indicator{
+      id
+      title
+      amount
+      unit
+    }
+    master_plan{
+      id
+      path
+      origin_name
+    }
+    master_plan_mobile{
+      id
+      path
+      origin_name
+    }
+  }
+  info{
+    indicator{
+      id
+      title
+      amount
+      unit
+    }
+  }
+  charts_item(object_id:$id about:false){
+    id
+    title
+    object{
+      id
+      title
+    }
+    indicators{
+      id
+      title
+      color
+      values{
+        id
+        title
+        year
+        value
+      }
+    }
+  }
+  info_files(type: 1) {
+    id
+    title
+    file{
+      id
+      path
+    }
+    type {
+      code
+    }
+  }
+
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

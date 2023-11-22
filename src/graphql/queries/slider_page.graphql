@@ -1,0 +1,44 @@
+query($month_count: Int, $min_price: Int, $max_price: Int) {
+  apartments(month_count: $month_count, min_price: $min_price, max_price: $max_price) {
+    square
+    price
+    payback
+    month_count
+    img{
+      id
+      alt
+      path
+      alt
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+  bonuses{
+    id
+    title
+  }
+}

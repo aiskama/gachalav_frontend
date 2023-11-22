@@ -1,0 +1,77 @@
+query($first: Int,
+  $page: Int,
+  $min_price: Int,
+  $max_price: Int,
+  $orderBy: String!,
+  $object_home_id: Int,
+  $number_rooms: [Int],
+  $studio: Boolean) {
+  apartments_paginate(first: $first,
+    page: $page,
+    min_price: $min_price,
+    max_price: $max_price,
+    object_home_id: $object_home_id,
+    number_rooms: $number_rooms,
+    studio: $studio,
+    ordering: [{orderColumn: "price", orderBy: $orderBy}]) {
+    paginatorInfo {
+      total
+    }
+    data {
+      id
+      title
+      square
+      price_sq
+      old_price
+      price
+      number_rooms
+      floor
+      frame
+      ceiling_height
+      code
+      section
+      settlement
+      room
+      img {
+        id
+        path
+        origin_name
+        alt
+        size
+        type
+      }
+    }
+  }
+
+  object_homes_item(id: $object_home_id){
+    id
+    title
+  }
+
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

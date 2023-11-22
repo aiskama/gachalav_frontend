@@ -1,0 +1,146 @@
+query($first: Int, $conclusion: Boolean){
+  gallery_works{
+    images{
+      id
+      img{
+        id
+        path
+        origin_name
+        alt
+      }
+      title
+      subtitle
+    }
+  }
+  object_homes_paginate(first: $first,conclusion:true, ordering: [{orderColumn: "date", orderBy: "DESC"}]){
+    data{
+      id
+      title
+      price
+      payback
+      left
+      images{
+        id
+        title
+        img{
+          id
+          path
+          origin_name
+          alt
+        }
+      }
+      img{
+        id
+        path
+        origin_name
+        alt
+      }
+    }
+  }
+  news_paginate(first: $first, conclusion: $conclusion, ordering: [{orderColumn: "date", orderBy: "DESC"}]){
+    paginatorInfo{
+      total
+    }
+    data{
+      id
+      title
+      subtitle
+      date
+      description
+      category {
+        id
+        title
+      }
+      conclusion
+      actual
+      created_at
+    }
+  }
+  info_files(type: 1) {
+    id
+    title
+    file{
+      id
+      path
+    }
+    type {
+      code
+    }
+  }
+  info{
+    card{
+      id
+      title
+      subtitle
+    }
+    presentation{
+      id
+      title
+      description
+      file{
+        id
+        path
+        origin_name
+      }
+      square
+      income
+      implementation
+    }
+
+  }
+  secondaryobject{
+    id
+    title
+    subtitle
+    left
+    images{
+      id
+      title
+      img{
+        id
+        path
+        origin_name
+        alt
+      }
+    }
+    description
+    img{
+      id
+      path
+      alt
+    }
+    images{
+      img{
+        id
+        path
+        alt
+      }
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

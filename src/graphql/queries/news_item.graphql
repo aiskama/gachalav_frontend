@@ -1,0 +1,60 @@
+query($id: Int, $page: Int) {
+  news_item (id: $id){
+    id
+    title
+    subtitle
+    date
+    description
+    category {
+      id
+      title
+    }
+    conclusion
+    actual
+  }
+  news_paginate (page: $page, similar:$id, first:3){
+    paginatorInfo{
+      total
+    }
+    data{
+      id
+      title
+      subtitle
+      date
+      description
+      category {
+        id
+        title
+      }
+      conclusion
+      actual
+      created_at
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

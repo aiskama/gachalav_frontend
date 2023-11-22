@@ -1,0 +1,35 @@
+query{
+  feedback {
+    id
+    phone
+    email
+    working_mode
+    address
+    link
+    socials{
+      id
+      title
+      link
+      phone
+    }
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+}

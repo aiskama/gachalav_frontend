@@ -1,0 +1,115 @@
+query{
+  info{
+    title
+    subtitle
+    consultation{
+      id
+      title
+      img{
+        id
+        path
+        origin_name
+        alt
+      }
+      description
+      name
+      date
+      time
+    }
+    object_homes {
+      id
+      title
+      price
+      payback
+      left
+      images{
+        id
+        title
+        img{
+          id
+          path
+          origin_name
+          alt
+        }
+      }
+      img {
+        id
+        path
+        origin_name
+      }
+    }
+    files {
+      id
+      title
+      type {
+        id
+        name
+        code
+      }
+      file {
+        id
+        path
+        origin_name
+        alt
+        size
+        type
+      }
+      is_main
+    }
+    indicator{
+      id
+      title
+      amount
+      unit
+    }
+    speech
+    smi{
+      id
+      title
+      subtitle
+      link
+      logo
+    }
+  }
+  charts_item(about: true){
+    id
+    title
+    indicators{
+      id
+      title
+      color
+      values{
+        id
+        title
+        year
+        value
+      }
+    }
+  }
+  socials{
+    id
+    title
+    link
+    phone
+    icon
+  }
+  header: object_homes_paginate(first: 2, menu: true) {
+    data {
+      id
+      title
+    }
+  }
+  footer: object_homes_paginate(first: 4, conclusion: true) {
+    data {
+      id
+      title
+    }
+  }
+  feedback {
+    id
+    email
+    address
+    working_mode
+    phone
+  }
+}

@@ -1,0 +1,15 @@
+mutation(
+  $phone: String
+  $bonus: Int
+  $name: String
+  $type: Int
+) {
+  ClaimCreate(
+    bonus: $bonus
+    phone: $phone
+    name: $name
+    type: $type
+  ) {
+    message
+  }
+}
